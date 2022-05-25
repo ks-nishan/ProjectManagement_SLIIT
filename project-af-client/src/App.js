@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import CreateUser from "./components/CreateUser";
+import EditUser from "./components/EditUser";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
+import UserDetails from "./components/UserDetails";
+import Footer from "./components/Footer";
+import Login from "./components/Login";
+import FileUploadScreen from "./components/FileUploadScreen";
+import AdminDash from "./components/AdminDash";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <NavBar />
+        <div className="container" style={{ backgroungColor: "gray" }}>
+          <Route path="/login" component={Login}></Route>
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/dashboad" exact component={AdminDash}></Route>
+          <Route path="/add" component={CreateUser}></Route>
+          <Route path="/edit/:id" component={EditUser}></Route>
+          <Route path="/user/:id" component={UserDetails}></Route>
+          <Route path="/file" component={FileUploadScreen}></Route>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
-
-export default App;
