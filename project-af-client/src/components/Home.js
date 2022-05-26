@@ -53,7 +53,7 @@ export default class Home extends Component {
       <div className="container">
         <div className="row">
           <div className="col-lg-9 mt-2 mb-2">
-            <p>All Users</p>
+            <h3>System Users</h3>
           </div>
           <div className="col-lg-3 mt-2 mb-2">
             <select
@@ -124,17 +124,17 @@ export default class Home extends Component {
             </tbody>
           </table> */}
 
-          <button className="btn btn-success">
+          {/* <button className="btn btn-success">
             <a href="/add" style={{ textDecoration: "none", color: "white" }}>
               Create New User
             </a>
-          </button>
+          </button> */}
         </div>
         <br></br>
         {this.state.users.map((users, index) => (
           <span>
             <div class="card">
-              <h3 class="card-header">
+              <h3 class="card-header" style={{ backgroundColor: "" }}>
                 {" "}
                 <a
                   href={`/user/${users._id}`}

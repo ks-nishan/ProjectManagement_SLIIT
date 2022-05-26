@@ -36,19 +36,19 @@ function HomeNavBar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-4 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">
+                <a class="nav-link active" aria-current="page" href="/dashboad">
                   Home
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Authors
+                <a class="nav-link active" aria-current="page" href="/add">
+                  Create User
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/research">
-                  Research
+                <a class="nav-link active" aria-current="page" href="/">
+                  All Users
                 </a>
               </li>
               <li class="nav-item">
@@ -61,33 +61,7 @@ function HomeNavBar() {
                   Important Dates
                 </a>
               </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Supervisor
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="/org">
-                      Organizing Committee
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="/tec">
-                      Technical Committee
-                    </a>
-                  </li>
-                </ul>
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/about">
                   About Us
@@ -108,10 +82,7 @@ function HomeNavBar() {
               </button>
               &nbsp;&nbsp;
               <button className="btn btn-outline-warning " type="submit">
-                <a
-                  className="text-decoration-none text-white"
-                  href="/registration"
-                >
+                <a className="text-decoration-none text-white" href="/add">
                   Registration
                 </a>
                 <i className="bi bi-save2"></i>

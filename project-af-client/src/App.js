@@ -15,7 +15,10 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <NavBar />
-        <div className="container" style={{ backgroungColor: "gray" }}>
+        <div
+          className="container"
+          style={{ backgroungColor: "gray", flex: "1 1 auto" }}
+        >
           <Route path="/login" component={Login}></Route>
           <Route path="/" exact component={Home}></Route>
           <Route path="/dashboad" exact component={AdminDash}></Route>
