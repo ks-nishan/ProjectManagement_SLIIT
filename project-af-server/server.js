@@ -36,6 +36,18 @@ mongoose
   .catch((err) => {
     console.log("DB connection error", err);
   });
+// IT20224134 
+
+
+const viewsupervisor=require('./routes/supervisor')
+app.use("/supervisor",viewsupervisor)
+
+const viewcosupervisor=require('./routes/cosupervisor')
+app.use("/cosupervisor",viewcosupervisor)
+
+const viewtopic=require('./routes/topic')
+app.use("/topic",viewtopic)
+
 
 //connecting the server
 app.listen(PORT, () => {
