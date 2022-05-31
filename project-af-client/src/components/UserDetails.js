@@ -64,7 +64,7 @@ export default class UserDetails extends Component {
     const { userName, role, userId, pwd, cpwd } = this.state.user;
     return (
       <div style={{ marginTop: "20px" }}>
-        UserDetails
+        <h3>User Details</h3>
         <h4>{userName}</h4>
         <div className="row mt-3">
           <div
@@ -190,6 +190,9 @@ export default class UserDetails extends Component {
             </div>
           </div>
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
     );
   }

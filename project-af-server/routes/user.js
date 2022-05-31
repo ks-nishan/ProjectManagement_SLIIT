@@ -104,6 +104,10 @@ router.get("/user/:id", (req, res) => {
 
 //update user
 router.put("/user/update/:id", (req, res) => {
+  let email = req.body.pwd;
+  let up_user = req.body.userName;
+  let up_role = req.body.role;
+  let up_pwd = req.body.cpwd;
   User.findByIdAndUpdate(
     req.params.id,
     {
@@ -113,6 +117,46 @@ router.put("/user/update/:id", (req, res) => {
       if (err) {
         return res.status(400).json({ error: err });
       }
+      let mailTransporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: "nishannisha330@gmail.com",
+          pass: "nisha330",
+        },
+      });
+
+      let details = {
+        from: "nishannisha330@gmail.com",
+        to: email,
+        subject: "Detail Updated!!!",
+        text:
+          "Hi " +
+          up_user +
+          ",\n\n" +
+          "Your profile detais are updated by the admin.Your new credential are bellow.\n\n" +
+          "User Name : " +
+          up_user +
+          "\n" +
+          "User Role : " +
+          up_role +
+          "\n" +
+          "Email Address : " +
+          email +
+          "\n" +
+          "New Password : " +
+          up_pwd +
+          "\n\n" +
+          "Thank You.\n" +
+          "SLIIT",
+      };
+
+      mailTransporter.sendMail(details, (err) => {
+        if (err) {
+          console.log("It has an error", err);
+        } else {
+          console.log("Update Email sent successfully");
+        }
+      });
 
       return res.status(200).json({
         success: "Update succesfully",

@@ -2,11 +2,21 @@ import React from "react";
 
 function HomeNavBar() {
   return (
-    <div>
+    <div
+      style={{
+        bottom: "0",
+        color: "#707070",
+        height: "2em",
+        left: "0",
+        position: "fixed", //changed to relative from fixed also works if position is not there
+        fontSize: "small",
+        width: "100%",
+      }}
+    >
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
         <div className="container-fluid">
           <a className="navbar-brand text-muted" href="#">
-            AFGlobal-2021
+            SLIITPP-2022
           </a>
           <button
             className="navbar-toggler"
@@ -21,15 +31,23 @@ function HomeNavBar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
-              <li className="nav-item">
+              <li className="nav-item" style={{ marginLeft: "400px" }}>
                 <a className="nav-link" href="/Admin_side_login">
-                  Admin Login
+                  All rights are resived @2022
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/Admin_side_registration">
-                  Admin Register
+                  Sri Lanka Institute of Information Technology
                 </a>
+              </li>
+              <li style={{ marginLeft: "400px", marginTop: "7px" }}>
+                <i class="bi-facebook" style={{ marginRight: "4px" }}>
+                  <a href="www.google.com"></a>
+                </i>
+                <i class="bi-youtube" style={{ marginRight: "4px" }}></i>
+                <i class="bi-twitter" style={{ marginRight: "4px" }}></i>
+                <i class="bi-instagram"></i>
               </li>
             </ul>
           </div>
