@@ -9,6 +9,10 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import FileUploadScreen from "./components/FileUploadScreen";
 import AdminDash from "./components/AdminDash";
+import TopicsReg from "./components/TopicsReg";
+import RegisterTopic from "./components/RegisterTopic";
+import TopicDetails from "./components/TopicDetails";
+import EditTopic from "./components/EditTopic";
 
 export default class App extends Component {
   render() {
@@ -25,6 +29,10 @@ export default class App extends Component {
           <Route path="/add" component={CreateUser}></Route>
           <Route path="/edit/:id" component={EditUser}></Route>
           <Route path="/user/:id" component={UserDetails}></Route>
+          <Route path="/topics" component={TopicsReg}></Route>
+          <Route path="/topic/add" component={RegisterTopic}></Route>
+          <Route path="/topicDetail/:id" component={TopicDetails}></Route>
+          <Route path="/topic/edit/:id" component={EditTopic}></Route>
           <Route path="/file" component={FileUploadScreen}></Route>
           <Footer />
         </div>

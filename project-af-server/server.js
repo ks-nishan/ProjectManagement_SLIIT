@@ -1,31 +1,33 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const path = require('path');
-
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const path = require("path");
 
 const app = express();
 
 //import routes
-const userRoutes = require('./routes/user');
-const fileRoutes = require('./routes/file-upload-routes');
+const userRoutes = require("./routes/user");
+const fileRoutes = require("./routes/file-upload-routes");
+const topicRegRoutes = require("./routes/topicReg");
 
 //app middleware
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-app.use('/api', fileRoutes.routes);
+app.use("/api", fileRoutes.routes);
 
-require('./database')();
+require("./database")();
 
 //route middleware
 app.use(userRoutes);
+app.use(topicRegRoutes);
 
 const PORT = 8000;
-const DB_URL = "mongodb+srv://Nishanthan:Nisha888@projectaf.x1clt.mongodb.net/user?retryWrites=true&w=majority";
+const DB_URL =
+  "mongodb+srv://Nishanthan:Nisha888@projectaf.x1clt.mongodb.net/user?retryWrites=true&w=majority";
 
 //database connection
 mongoose
