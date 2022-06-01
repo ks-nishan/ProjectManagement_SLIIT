@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
+const dotenv = require("dotenv");
+require("dotenv").config();
 
 const app = express();
 
@@ -25,9 +27,26 @@ require("./database")();
 app.use(userRoutes);
 app.use(topicRegRoutes);
 
-const PORT = 8000;
-const DB_URL =
-  "mongodb+srv://Nishanthan:Nisha888@projectaf.x1clt.mongodb.net/user?retryWrites=true&w=majority";
+// -------------Deployment-------------------
+__dirname = path.resolve();
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../project-af-client/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.join(__dirname, "../project-af-client/build", "index.html")
+    );
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running");
+  });
+}
+
+//-------------Deployment-------------------
+
+const PORT = process.env.PORT || 8000;
+const DB_URL = process.env.MONGO_URL;
 
 //database connection
 mongoose

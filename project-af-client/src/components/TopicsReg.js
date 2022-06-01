@@ -33,25 +33,36 @@ export default class TopicReg extends Component {
     });
   };
 
-  filterdata(users, serchKey) {
-    const result = users.filter((user) => user.role.includes(serchKey));
-    this.setState({ users: result });
+  filterdata(topicRegs, serchKey) {
+    const result = topicRegs.filter((topicReg) =>
+      topicReg.leaderName.includes(serchKey)
+    );
+    this.setState({ topicRegs: result });
   }
 
   handleSerchArea = (e) => {
     const serchKey = e.currentTarget.value;
 
-    axios.get("/user").then((res) => {
+    axios.get("/topicReg").then((res) => {
       if (res.data.success) {
-        this.filterdata(res.data.existingUsers, serchKey);
+        this.filterdata(res.data.RegisteredTopics, serchKey);
       }
     });
   };
 
   render() {
     return (
-      <div>
-        <p>All Topics</p>
+      <div className="row">
+        <p className="col-lg-9 mt-2 mb-2">All Topics</p>
+        <div className="col-lg-3 mt-2 mb-2">
+          <input
+            className="form-control"
+            type="serch"
+            placeholder="Serch"
+            name="searchQuery"
+            onChange={this.handleSerchArea}
+          ></input>
+        </div>
         <table className="table">
           <thead>
             <tr>

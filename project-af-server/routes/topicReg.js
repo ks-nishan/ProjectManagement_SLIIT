@@ -8,10 +8,6 @@ const router = express.Router();
 
 //save Topic registration
 router.post("/topicReg/save", (req, res) => {
-  let senderMail = req.body.leaderEmail;
-  let resiverMail = req.body.supervisorEmail;
-  let topic = req.body.remarks;
-
   let newTopicReg = new TopicReg(req.body);
   console.log(newTopicReg.leaderName);
   newTopicReg.save((err) => {
@@ -63,6 +59,8 @@ router.put("/topic_reg/update/:id", (req, res) => {
   let email = req.body.leaderEmail;
   let status = req.body.status;
   // let student = res.body.leaderName;
+  let supervisor = req.body.supervisorName;
+  let topic = req.body.remarks;
   TopicReg.findByIdAndUpdate(
     req.params.id,
     {
@@ -87,7 +85,21 @@ router.put("/topic_reg/update/:id", (req, res) => {
         from: "nishannisha330@gmail.com",
         to: email,
         subject: "Supervisor Status",
-        text: "Hi " + "\n" + "Your supervisor request was " + status,
+        text:
+          "Hi " +
+          "\n" +
+          "Your supervisor request was " +
+          status +
+          " by Mr/Miss " +
+          supervisor +
+          ".Which is based on " +
+          topic +
+          "\n" +
+          "If you have to no more informations about the topic content you can connect your supervisor via email." +
+          "\n\n" +
+          "Thank You" +
+          "\n" +
+          "SLIITPP 2022",
       };
 
       mailTransporter.sendMail(details, (err) => {
