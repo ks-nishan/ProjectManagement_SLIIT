@@ -9,7 +9,8 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import FileUploadScreen from "./components/FileUploadScreen";
 import AdminDash from "./components/AdminDash";
-
+import Homepage from './Pages/Homepage';
+import Chatpage from './Pages/Chatpage';
 export default class App extends Component {
   render() {
     return (
@@ -23,6 +24,8 @@ export default class App extends Component {
           <Route path="/edit/:id" component={EditUser}></Route>
           <Route path="/user/:id" component={UserDetails}></Route>
           <Route path="/file" component={FileUploadScreen}></Route>
+          <Route path = "/HOMEPAGE" element={<Homepage/>} exact/>
+      <Route path = "/chats" element={<Chatpage/>}/>
           <Footer />
         </div>
       </BrowserRouter>
