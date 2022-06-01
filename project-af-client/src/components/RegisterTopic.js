@@ -94,7 +94,7 @@ export default class RegisterTopic extends Component {
         <form>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label for="userName">User Name</label>
+              <label for="userName">Leader Name</label>
               <input
                 type="text"
                 className="form-control"
@@ -102,7 +102,7 @@ export default class RegisterTopic extends Component {
                 name="leaderName"
                 value={this.state.leaderName}
                 onChange={this.handleInputChange}
-                placeholder="Enter User Name"
+                placeholder="Mr.R.Muththu"
               ></input>
               {/* <small id="emailHelp" className="form-text text-muted">
         We'll never share your email with anyone else.
@@ -110,7 +110,7 @@ export default class RegisterTopic extends Component {
             </div>
 
             <div className="form-group col-md-6">
-              <label for="role">leaderEmail</label>
+              <label for="role">Leader Email</label>
               <input
                 type="text"
                 className="form-control"
@@ -118,13 +118,13 @@ export default class RegisterTopic extends Component {
                 name="leaderEmail"
                 value={this.state.leaderEmail}
                 onChange={this.handleInputChange}
-                placeholder="Enter User Email"
+                placeholder="nisha123@gmail.com"
               ></input>
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label for="userId">leaderPhone</label>
+              <label for="userId">Leader Phone</label>
               <input
                 type="text"
                 className="form-control"
@@ -132,12 +132,12 @@ export default class RegisterTopic extends Component {
                 name="leaderPhone"
                 value={this.state.leaderPhone}
                 onChange={this.handleInputChange}
-                placeholder="Enter Phone number"
+                placeholder="0771234567"
               ></input>
             </div>
             <div className="form-group col-md-6">
-              <label for="accadamicYear">accadamicYear </label>
-              <input
+              <label for="accadamicYear">Accadamic Year </label>
+              {/* <input
                 type="text"
                 className="form-control"
                 id="accadamicYear"
@@ -145,13 +145,25 @@ export default class RegisterTopic extends Component {
                 value={this.state.accadamicYear}
                 onChange={this.handleInputChange}
                 placeholder="accadamicYear"
-              ></input>
+              ></input> */}
+              <select
+                className="form-control"
+                id="accadamicYear"
+                name="accadamicYear"
+                value={this.state.accadamicYear}
+                onChange={this.handleInputChange}
+              >
+                <option>-----Select-----</option>
+                <option>Y3S2</option>
+                <option>Y4S1</option>
+                <option>Y4S2</option>
+              </select>
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label for="faculty"> faculty</label>
-              <input
+              <label for="faculty"> Faculty</label>
+              {/* <input
                 type="text"
                 className="form-control"
                 id="faculty"
@@ -159,10 +171,22 @@ export default class RegisterTopic extends Component {
                 value={this.state.faculty}
                 onChange={this.handleInputChange}
                 placeholder="Password"
-              ></input>
+              ></input> */}
+              <select
+                className="form-control"
+                id="faculty"
+                name="faculty"
+                value={this.state.faculty}
+                onChange={this.handleInputChange}
+              >
+                <option>-----Select-----</option>
+                <option>Faculty of Computing(FOC)</option>
+                <option>Faculty of Engineering(FOE)</option>
+                <option>SLIIT Bussiness School</option>
+              </select>
             </div>
             <div className="form-group col-md-6">
-              <label for="studyLevel"> studyLevel</label>
+              <label for="studyLevel"> Study Level</label>
               <input
                 type="text"
                 className="form-control"
@@ -170,13 +194,13 @@ export default class RegisterTopic extends Component {
                 name="studyLevel"
                 value={this.state.studyLevel}
                 onChange={this.handleInputChange}
-                placeholder="Password"
+                placeholder="BSc(Hons)"
               ></input>
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-4">
-              <label for="startDate"> startDate</label>
+              <label for="startDate"> Start Date</label>
               <input
                 type="date"
                 className="form-control"
@@ -188,7 +212,7 @@ export default class RegisterTopic extends Component {
               ></input>
             </div>
             <div className="form-group col-md-4">
-              <label for="endDate"> endDate</label>
+              <label for="endDate"> End Date</label>
               <input
                 type="date"
                 className="form-control"
@@ -200,7 +224,7 @@ export default class RegisterTopic extends Component {
               ></input>
             </div>
             <div className="form-group col-md-4">
-              <label for="courceCode"> courceCode</label>
+              <label for="courceCode"> Cource Code</label>
               <input
                 type="text"
                 className="form-control"
@@ -208,13 +232,13 @@ export default class RegisterTopic extends Component {
                 name="courceCode"
                 value={this.state.courceCode}
                 onChange={this.handleInputChange}
-                placeholder="Password"
+                placeholder="SE3040"
               ></input>
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label for="supervisorName"> supervisorName</label>
+              <label for="supervisorName"> Supervisor Name</label>
               <input
                 type="text"
                 className="form-control"
@@ -222,11 +246,11 @@ export default class RegisterTopic extends Component {
                 name="supervisorName"
                 value={this.state.supervisorName}
                 onChange={this.handleInputChange}
-                placeholder="Password"
+                placeholder="Mr.K.Nishanthan"
               ></input>
             </div>
             <div className="form-group col-md-6">
-              <label for="supervisorEmail"> supervisorEmail</label>
+              <label for="supervisorEmail"> Supervisor Email</label>
               <input
                 type="text"
                 className="form-control"
@@ -234,7 +258,7 @@ export default class RegisterTopic extends Component {
                 name="supervisorEmail"
                 value={this.state.supervisorEmail}
                 onChange={this.handleInputChange}
-                placeholder="supervisorEmail"
+                placeholder="nisha123@gmail.com"
               ></input>
             </div>
           </div>
@@ -247,7 +271,7 @@ export default class RegisterTopic extends Component {
               name="remarks"
               value={this.state.remarks}
               onChange={this.handleInputChange}
-              placeholder="remarks"
+              placeholder="Your Topic"
             ></input>
           </div>
           {/* <div className="form-group">
