@@ -7,7 +7,8 @@
     "test": "jest",
     "server": "nodemon server.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIGPRODUCTION=false npm install --prefix project-af-client && npm run build --prefix project-af-client"
   },
   "keywords": [],
   "author": "",
