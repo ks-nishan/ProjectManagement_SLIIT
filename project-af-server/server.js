@@ -48,6 +48,8 @@ app.use("/cosupervisor",viewcosupervisor)
 const viewtopic=require('./routes/topic')
 app.use("/topic",viewtopic)
 
+const addsubmison=require('./routes/Submission')
+app.use("/",addsubmison)
 
 //connecting the server
 app.listen(PORT, () => {

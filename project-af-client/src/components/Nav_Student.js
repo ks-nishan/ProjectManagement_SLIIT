@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../images/SLIIT_Logo.png";
 
-function HomeNavBar() {
+function HomeNavBarStudent() {
   return (
     <div>
       <nav
@@ -55,52 +55,30 @@ function HomeNavBar() {
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/workshop">
-                  Workshops
+                  Group Registeration 
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/date">
-                  Important Dates
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Supervisor
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="/org">
-                      Organizing Committee
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="/tec">
-                      Technical Committee
-                    </a>
-                  </li>
-                </ul>
-              </li>
+            
+            
+        
+              
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/about">
-                  About Us
+                Panel Members 
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/contact">
-                  Contact Us
+                  Templates 
                 </a>
               </li>
-            </ul>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/contact">
+                  Marking Schemas 
+                </a>
+              </li>
+            </ul> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
             <form className="d-flex" style={{ marginLeft: "260px" }}>
               <button className="btn btn-warning tab" type="submit">
                 <a className="text-decoration-none text-dark " href="/Login">
@@ -127,4 +105,4 @@ function HomeNavBar() {
   );
 }
 
-export default HomeNavBar;
+export default HomeNavBarStudent;
